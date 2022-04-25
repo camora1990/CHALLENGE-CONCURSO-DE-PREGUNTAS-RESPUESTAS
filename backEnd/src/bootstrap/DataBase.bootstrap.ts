@@ -1,6 +1,8 @@
 import { IServer } from "./IServer.bootstrap";
 import mongosee, { Connection } from "mongoose";
 import config from "../config/config";
+import {  roundModel } from "../model/Round.model";
+import { roundInitialData } from "../data/round.initalData";
 
 export class DataBase implements IServer {
   private _CONNECTION_STRING: string;
@@ -28,6 +30,23 @@ export class DataBase implements IServer {
   async closeConnection(): Promise<void> {
     try {
       await this._dbClient.close(true);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async initializeData(): Promise<void> {
+    try {
+      await this.deleteData();
+      const createRound = roundModel.insertMany(roundInitialData);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async deleteData(): Promise<void> {
+    try {
+      await roundModel.deleteMany();
     } catch (error) {
       console.log(error);
     }
