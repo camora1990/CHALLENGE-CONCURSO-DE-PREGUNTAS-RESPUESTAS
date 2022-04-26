@@ -18,4 +18,4 @@ const roundSchema = new Schema<Round>({
 
 const roundModel = model<Round>("Round", roundSchema);
 
-export { roundModel };
+export default roundModel;
