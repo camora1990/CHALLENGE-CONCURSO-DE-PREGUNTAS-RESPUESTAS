@@ -1,7 +1,7 @@
 import { IServer } from "./IServer.bootstrap";
 import mongosee, { Connection } from "mongoose";
 import config from "../config/config";
-import { roundModel } from "../model/Round.model";
+import roundModel from "../model/Round.model";
 import { ConnectionOptions } from "tls";
 import { populateData } from "../helpers/populateData";
 import categoryModel from "../model/Category.model";

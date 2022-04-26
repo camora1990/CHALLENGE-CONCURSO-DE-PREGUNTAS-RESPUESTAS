@@ -4,6 +4,9 @@ import cors from "cors";
 
 import config from "../config/config";
 import { IServer } from "./IServer.bootstrap";
+import { Path } from "../enums/path.enum";
+import { playerRoute } from "../routes/Player.routes";
+import { roundRoute } from "../routes/Round.routes";
 
 export class Server implements IServer {
   private _app: Application;
@@ -13,7 +16,7 @@ export class Server implements IServer {
     this._app = express();
     this._PORT = Number(config.port) || 5000;
     this.middlewares();
-    this.routes()
+    this.routes();
   }
 
   middlewares(): void {
@@ -22,7 +25,10 @@ export class Server implements IServer {
     this._app.use(cors({ origin: "*" }));
   }
 
-  routes(): void {}
+  routes(): void {
+    this._app.use(Path.player, playerRoute);
+    this._app.use(Path.round, roundRoute)
+  }
 
   initialize(): Promise<any> {
     return new Promise((resolve, reject) => {
