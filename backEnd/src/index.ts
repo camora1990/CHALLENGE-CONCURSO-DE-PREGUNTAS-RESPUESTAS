@@ -9,6 +9,7 @@ const dataBase = new DataBase();
     await server.initialize();
     const mongoose = await dataBase.initialize();
     console.log(`connected to dataBase ${mongoose.connections[0].name}`);
+    dataBase.initializeData()
   } catch (error) {
     await dataBase.closeConnection()
     console.log(error);
