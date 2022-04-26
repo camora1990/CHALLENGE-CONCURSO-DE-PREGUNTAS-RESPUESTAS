@@ -9,6 +9,7 @@ import { playerRoute } from "../routes/Player.routes";
 import { roundRoute } from "../routes/Round.routes";
 import { categoryRoute } from "../routes/Category.route";
 import { questionRoute } from "../routes/Question.route";
+import { scoreRoute } from "../routes/Score.route";
 
 export class Server implements IServer {
   private _app: Application;
@@ -32,6 +33,7 @@ export class Server implements IServer {
     this._app.use(Path.round, roundRoute);
     this._app.use(Path.category, categoryRoute);
     this._app.use(Path.question, questionRoute);
+    this._app.use(Path.score, scoreRoute);
   }
 
   initialize(): Promise<any> {

@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-class Player {
+export class Player {
   name: string;
   email: string;
 }
