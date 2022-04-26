@@ -7,6 +7,8 @@ import { IServer } from "./IServer.bootstrap";
 import { Path } from "../enums/path.enum";
 import { playerRoute } from "../routes/Player.routes";
 import { roundRoute } from "../routes/Round.routes";
+import { categoryRoute } from "../routes/Category.route";
+import { questionRoute } from "../routes/Question.route";
 
 export class Server implements IServer {
   private _app: Application;
@@ -27,7 +29,9 @@ export class Server implements IServer {
 
   routes(): void {
     this._app.use(Path.player, playerRoute);
-    this._app.use(Path.round, roundRoute)
+    this._app.use(Path.round, roundRoute);
+    this._app.use(Path.category, categoryRoute);
+    this._app.use(Path.question, questionRoute);
   }
 
   initialize(): Promise<any> {
