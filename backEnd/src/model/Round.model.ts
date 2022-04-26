@@ -2,6 +2,7 @@ import { Schema, model } from "mongoose";
 
 export class Round {
   round: string;
+  points: number
 }
 
 const roundSchema = new Schema<Round>({
@@ -9,6 +10,10 @@ const roundSchema = new Schema<Round>({
     type: String,
     required: true,
   },
+  points:{
+      type: Number,
+      require: true
+  }
 });
 
 const roundModel = model<Round>("Round", roundSchema);
