@@ -10,7 +10,7 @@ class RoundRoute {
     this.routes();
   }
 
-  routes() {
+  routes() :void{
     this._route.get("/",roundController.getRounds);
   }
 

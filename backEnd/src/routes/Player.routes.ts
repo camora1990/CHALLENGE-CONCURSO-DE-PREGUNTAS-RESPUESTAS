@@ -4,20 +4,20 @@ import { PlayerController } from "../controller/Player.controller";
 const playerController = new PlayerController();
 
 class PlayerRoute {
-  private _route: Router;
+  private _router: Router;
   constructor() {
-    this._route = Router();
+    this._router = Router();
     this.routes();
   }
 
-  routes() {
-    this._route.post("/", playerController.postPlayer);
+  routes():void {
+    this._router.post("/", playerController.postPlayer);
   }
-  public get route(): Router {
-    return this._route;
+  public get router(): Router {
+    return this._router;
   }
 }
 
 const newPlayerRouter: PlayerRoute = new PlayerRoute();
-const { route } = newPlayerRouter;
-export { route as playerRoute };
+const { router } = newPlayerRouter;
+export { router as playerRoute };
