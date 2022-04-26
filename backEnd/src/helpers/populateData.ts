@@ -3,7 +3,7 @@ import { questionInitialData } from "../data/question.initialData";
 import { roundInitialData } from "../data/round.initalData";
 import categoryModel from "../model/Category.model";
 import questionModel from "../model/Question.model";
-import { roundModel } from "../model/Round.model";
+import roundModel  from "../model/Round.model";
 
 export const populateData = async (): Promise<void> => {
   const createRound = await roundModel.insertMany(roundInitialData);
