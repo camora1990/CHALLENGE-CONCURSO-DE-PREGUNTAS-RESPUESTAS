@@ -1,23 +1,40 @@
-export const categoryInitialData: Array<any> = [
+import { Category } from "../model/Category.model";
+
+export const categoryInitialData: Array<Category> = [
   {
     category: "Fundamentos de programación",
-    round: "ROUND #1",
+    round: {
+      round: "RONDA #1",
+      points: 10000,
+    },
   },
   {
     category: "Git",
-    round: "ROUND #2",
+    round: {
+      round: "RONDA #2",
+      points: 15000,
+    },
   },
   {
     category: "Desarrollo Front End",
-    round: "ROUND #4",
+    round: {
+      round: "RONDA #3",
+      points: 20000,
+    },
   },
   {
     category: "Programacion orientada a objetos",
-    round: "ROUND #3",
+    round: {
+      round: "RONDA #4",
+      points: 25000,
+    },
   },
 
   {
     category: "Bases de datos",
-    round: "ROUND #5",
+    round: {
+      round: "RONDA #5",
+      points: 30000,
+    },
   },
 ];
