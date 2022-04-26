@@ -1,8 +1,9 @@
 import { IServer } from "./IServer.bootstrap";
 import mongosee, { Connection } from "mongoose";
 import config from "../config/config";
-import {  roundModel } from "../model/Round.model";
-import { roundInitialData } from "../data/round.initalData";
+import { roundModel } from "../model/Round.model";
+import { ConnectionOptions } from "tls";
+import { populateData } from "../helpers/populateData";
 
 export class DataBase implements IServer {
   private _CONNECTION_STRING: string;
@@ -16,7 +17,10 @@ export class DataBase implements IServer {
 
   initialize(): Promise<any> {
     return new Promise((resolve, reject) => {
-      mongosee.connect(this._CONNECTION_STRING);
+      mongosee.connect(this._CONNECTION_STRING, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      } as ConnectionOptions);
 
       this._dbClient.on("error", (error) => {
         reject(error);
@@ -38,7 +42,7 @@ export class DataBase implements IServer {
   async initializeData(): Promise<void> {
     try {
       await this.deleteData();
-      const createRound = roundModel.insertMany(roundInitialData);
+      await populateData();
     } catch (error) {
       console.log(error);
     }
