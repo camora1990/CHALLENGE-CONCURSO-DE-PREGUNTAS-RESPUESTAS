@@ -4,6 +4,8 @@ import config from "../config/config";
 import { roundModel } from "../model/Round.model";
 import { ConnectionOptions } from "tls";
 import { populateData } from "../helpers/populateData";
+import categoryModel from "../model/Category.model";
+import questionModel from "../model/Question.model";
 
 export class DataBase implements IServer {
   private _CONNECTION_STRING: string;
@@ -51,6 +53,8 @@ export class DataBase implements IServer {
   async deleteData(): Promise<void> {
     try {
       await roundModel.deleteMany();
+      await categoryModel.deleteMany();
+      await questionModel.deleteMany()
     } catch (error) {
       console.log(error);
     }
