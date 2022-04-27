@@ -5,15 +5,14 @@ export class QuestionController {
   async getQuestion(req: Request, res: Response): Promise<Response> {
     const { categoryId } = req.params;
     try {
-      const question = await questionModel.find({ category: categoryId }).populate({path:"category"});
-      const randon = Math.floor(
-        Math.random() * (question.length + 1 - 0 + 1) + 0
-      );
+      const question = await questionModel
+        .find({ category: categoryId })
+        .populate({ path: "category" });
 
       return res.status(200).json({
         ok: true,
         message: "Question of category",
-        question:question[randon],
+        question: question,
       });
     } catch (error) {
       return res.status(500).json({

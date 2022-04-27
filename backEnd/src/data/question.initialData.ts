@@ -659,7 +659,7 @@ export const questionInitialData: Array<Question> = [
   {
     question: "Al conjunto de datos estructurados, guardados en un medio de almacenamiento y relacionados entre sí, se le conoce como:",
     category: {
-      category: "Programacion orientada a objetos",
+      category: "Bases de datos",
       round: {
         round: "RONDA #5",
         points: 30000,
