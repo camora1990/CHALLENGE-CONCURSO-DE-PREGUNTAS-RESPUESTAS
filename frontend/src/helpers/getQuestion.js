@@ -15,7 +15,7 @@ export const getQuestion = async (rondaId) => {
       Math.random() * (responseQuestons.question.length - 1 - 0 + 1) + 0
     );
     return {
-      opciones: responseQuestons.question[random].options,
+      opciones: responseQuestons.question[random].options.sort(()=>Math.random()-0.5),
       pregunta: responseQuestons.question[random].question,
       categoria: responseCategory.category.category,
     };
