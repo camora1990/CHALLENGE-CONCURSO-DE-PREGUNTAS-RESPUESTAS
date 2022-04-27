@@ -10,8 +10,9 @@ class PlayerRoute {
     this.routes();
   }
 
-  routes():void {
+  routes(): void {
     this._router.post("/", playerController.postPlayer);
+    this._router.post("/login", playerController.login);
   }
   public get router(): Router {
     return this._router;
