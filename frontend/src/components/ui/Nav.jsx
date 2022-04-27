@@ -12,7 +12,7 @@ export const Nav = React.memo(({ puntos = 0 }) => {
     });
   };
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow ">
       <div className="container d-flex flex-wrap justify-content-between">
         <div className="d-flex flex-wrap text-light">
           <span className="nav-item nav-link text-secondary">

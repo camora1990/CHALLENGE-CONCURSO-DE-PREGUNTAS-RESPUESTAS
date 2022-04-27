@@ -40,15 +40,15 @@ export const JuegoScreen = () => {
       title: `Felicitaciones ${player.name} ganaste esta partida`,
       width: 600,
       padding: "3em",
-      color: "#716add",
-      background: "#fff url(/images/trees.png)",
+      color: "#3f4144",
+      background: "#fff url(/confetti.gif)",
       showCancelButton: true,
       confirmButtonText: "Jugar de nuevo",
       cancelButtonText: "Salir de juego",
       reverseButtons: true,
       backdrop: `
-        rgba(0,0,123,0.4)
-        url("/images/nyan-cat.gif")
+        rgba(0,0,0,0.4)
+        url("/ganadores.gif")
         left top
         no-repeat
       `,
@@ -64,6 +64,7 @@ export const JuegoScreen = () => {
       try {
         await axios.post("/score", { point: puntuacion, playe: player._id });
         Swal.fire({
+          
           position: "center",
           icon: "success",
           title: "Tu puntuacion fue almacenada con exito",
@@ -73,24 +74,27 @@ export const JuegoScreen = () => {
       } catch (error) {}
     });
   };
-  
+
   const mensajePerdedor = () => {
-    
     Swal.fire({
       title: "Respuesta incorrecta",
       text: "sigue practicando",
       icon: "error",
+      iconColor:"transparent",
+      background: "#fff url(/76ck.gif)",
+      color: "#000000",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Intentarlo de nuevo",
       cancelButtonText: "Salir del juego",
     }).then((result) => {
-      if (result.isConfirmed) {
-        getRound(rondas[0]._id)
+      debugger
+      if (result.isConfirmed || result.isDenied) {
+        getRound(rondas[0]._id);
         setsiguienteRoda(0);
         setPuntuacion(0);
-        setopcionSeleccionada({})
+        setopcionSeleccionada({});
       } else {
         dispatch({
           type: types.logout,
@@ -111,7 +115,7 @@ export const JuegoScreen = () => {
         setsiguienteRoda((siguienteRoda) => {
           return siguienteRoda + 1;
         });
-      } else if (siguienteRoda == totalRondas - 1) {
+      } else if (siguienteRoda === totalRondas - 1) {
         mensajeGanador();
         return;
       }
@@ -169,7 +173,10 @@ export const JuegoScreen = () => {
       {iniciaJuego && <Nav puntos={puntuacion} />}
       <div className="container">
         {!iniciaJuego ? (
-          <div className="alert alert-success mt-5" role="alert">
+          <div
+            className="custom-tarjetas  rounded alert alert-light mt-5 animate__animated animate__fadeIn"
+            role="alert"
+          >
             <h4 className="alert-heading">Instrucciones del juego</h4>
             <ol>
               <li>
@@ -194,24 +201,32 @@ export const JuegoScreen = () => {
               className="btn btn-outline-secondary"
               onClick={handleIniciarJuego}
             >
-              Iniciar
+              Iniciar Juego
             </button>
           </div>
         ) : (
           <>
-            <h3>{actualRonda.round}</h3>
-            <h3>{categoria}</h3>
-            <div className="alert alert-secondary" role="alert">
-              <h5 className="alert-heading">
-                {siguienteRoda + 1}. {pregunta}
+            <h1 className="text-center mt-2 mb-3">{actualRonda.round}</h1>
+            <h3 className="mt-5 text-center">
+              <strong>Categoría: </strong>
+              {categoria} por <strong>{String(actualRonda.points).replace(/\B(?=(\d{3})+\b)/g, ",")}</strong> Puntos
+            </h3>
+            <div
+              className="bg-transparent alert alert-light rounded  animate__animated animate__fadeInDown border-0"
+              role="alert"
+            >
+              <h5 className="alert-heading ">
+                <div className="custom-tarjetas bg-light p-4 rounded">
+                  {siguienteRoda + 1}. {pregunta}
+                </div>
               </h5>
               <hr />
               {opciones.map((opcion) => (
                 <button
                   key={opcion._id}
-                  className={`btn btn-outline-dark w-100 mb-3 ${
-                    opcion._id == opcionSeleccionada._id ? "active" : ""
-                  }`}
+                  className={` btn btn-outline-secondary  w-100 mb-3 p-2 ${
+                    opcion._id === opcionSeleccionada._id ? "active" : ""
+                  } custom-tarjetas btn-custom`}
                   role="alert"
                   onClick={(e) => {
                     setvalidarRespuesta(true);

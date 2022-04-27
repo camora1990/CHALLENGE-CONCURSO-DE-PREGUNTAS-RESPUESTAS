@@ -53,8 +53,8 @@ export const Login = () => {
   return (
     <div className="container">
       {loading && <Loading />}
-      <div className="row d-flex justify-content-center">
-        <div className="col-12 col-lg-6 shadow p-4 mb-5 bg-body rounded mt-3">
+      <div className="row d-flex justify-content-center p-3">
+        <div className="col-12 col-lg-6  p-4 mb-5 bg-body rounded-3 mt-5 custom-tarjetas">
           <form onSubmit={handleSubmit} className="mt-2">
             <div className="d-flex align-items-center mb-3 pb-1 justify-content-center">
               <i className="fas fa-poll fa-2x me-3"></i>

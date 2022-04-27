@@ -1,0 +1,60 @@
+body {
+  background-image: linear-gradient(
+    to right top,
+    #79777a,
+    #9ba9de,
+    #88dfec,
+    #b1e0d6,
+    #36c486
+  );
+
+  min-height: 100vh;
+}
+
+.custom-tarjetas {
+  box-shadow: 4px 3px 4px rgb(0 0 0 / 30%);
+  background-color: white;
+  border: none;
+}
+.btn-custom{
+    font-weight: 500;
+}
+
+.btn-custom:focus {
+  background-image: linear-gradient(
+    to right top,
+    #79777a,
+    #9ba9de,
+    #88dfec,
+    #b1e0d6,
+    #36c486
+  );
+  color: #3f4144;
+  border: 1px;
+}
+.btn-custom:hover {
+  background-color: #dcddde;
+  color: black;
+}
+.btn-custom:active {
+  background-color: #6c757d;
+}
+.active {
+  background-image: linear-gradient(
+    to right top,
+    #79777a,
+    #9ba9de,
+    #88dfec,
+    #b1e0d6,
+    #36c486
+  );
+  color: #6c757d;
+}
+
+.swal-height{
+    height: 50vh;
+}
+nav{
+    opacity: .75;
+    font-weight: bold;
+}
