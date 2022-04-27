@@ -43,7 +43,6 @@ export const Login = () => {
         payload: data.player,
       });
     } catch (error) {
-      debugger;
       !error.response?.data.ok &&
         Swal.fire("El usuario aun no esta registrado!!");
       setLoading(false);
