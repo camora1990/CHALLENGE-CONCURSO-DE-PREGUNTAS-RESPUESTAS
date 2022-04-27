@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Loading } from "./ui/Loading";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
+import { types } from "../types/types";
 
 export const Login = () => {
   const initialState = { name: "", email: "" };
@@ -10,6 +12,7 @@ export const Login = () => {
   const [login, setLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { dispatch } = useContext(AuthContext);
 
   const handleChange = (e) => {
     setinfoUser({
@@ -35,6 +38,10 @@ export const Login = () => {
       });
       setLoading(false);
       navigate("/juego", { replace: true });
+      dispatch({
+        type: types.login,
+        payload: data.player,
+      });
     } catch (error) {
       debugger;
       !error.response?.data.ok &&
@@ -48,7 +55,7 @@ export const Login = () => {
     <div className="container">
       {loading && <Loading />}
       <div className="row d-flex justify-content-center">
-        <div className="col-12 col-lg-6">
+        <div className="col-12 col-lg-6 shadow p-4 mb-5 bg-body rounded mt-3">
           <form onSubmit={handleSubmit} className="mt-2">
             <div className="d-flex align-items-center mb-3 pb-1 justify-content-center">
               <i className="fas fa-poll fa-2x me-3"></i>
