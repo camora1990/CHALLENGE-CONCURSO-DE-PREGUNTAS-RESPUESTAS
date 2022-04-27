@@ -37,7 +37,8 @@ export const JuegoScreen = () => {
 
   const mensajeGanador = () => {
     Swal.fire({
-      title: `Felicitaciones ${player.name} ganaste esta partida`,
+      title: `Felicitaciones ${player.name}`,
+      html: `Eres el ganador del premio mayor acumulando <b>${puntuacion}</b> puntos`,
       width: 600,
       padding: "3em",
       color: "#3f4144",
@@ -64,7 +65,6 @@ export const JuegoScreen = () => {
       try {
         await axios.post("/score", { point: puntuacion, playe: player._id });
         Swal.fire({
-          
           position: "center",
           icon: "success",
           title: "Tu puntuacion fue almacenada con exito",
@@ -80,7 +80,7 @@ export const JuegoScreen = () => {
       title: "Respuesta incorrecta",
       text: "sigue practicando",
       icon: "error",
-      iconColor:"transparent",
+      iconColor: "transparent",
       background: "#fff url(/76ck.gif)",
       color: "#000000",
       showCancelButton: true,
@@ -89,7 +89,7 @@ export const JuegoScreen = () => {
       confirmButtonText: "Intentarlo de nuevo",
       cancelButtonText: "Salir del juego",
     }).then((result) => {
-      debugger
+      debugger;
       if (result.isConfirmed || result.isDenied) {
         getRound(rondas[0]._id);
         setsiguienteRoda(0);
@@ -108,7 +108,7 @@ export const JuegoScreen = () => {
     if (isCorrect) {
       const { points } = actualRonda;
 
-      setPuntuacion(puntuacion + points);
+      setPuntuacion((puntuacion) => puntuacion + points);
       const totalRondas = rondas.length;
 
       if (siguienteRoda < totalRondas - 1) {
@@ -209,7 +209,11 @@ export const JuegoScreen = () => {
             <h1 className="text-center mt-2 mb-3">{actualRonda.round}</h1>
             <h3 className="mt-5 text-center">
               <strong>Categoría: </strong>
-              {categoria} por <strong>{String(actualRonda.points).replace(/\B(?=(\d{3})+\b)/g, ",")}</strong> Puntos
+              {categoria} por{" "}
+              <strong>
+                {String(actualRonda.points).replace(/\B(?=(\d{3})+\b)/g, ",")}
+              </strong>{" "}
+              Puntos
             </h3>
             <div
               className="bg-transparent alert alert-light rounded  animate__animated animate__fadeInDown border-0"
