@@ -7,7 +7,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Fundamentos de programación",
       round: {
-        round: "RONDA #1",
+        round: "NIVEL 1",
         points: 10000,
       },
     },
@@ -35,7 +35,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Fundamentos de programación",
       round: {
-        round: "RONDA #1",
+        round: "NIVEL 1",
         points: 10000,
       },
     },
@@ -64,7 +64,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Fundamentos de programación",
       round: {
-        round: "RONDA #1",
+        round: "NIVEL 1",
         points: 10000,
       },
     },
@@ -92,7 +92,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Fundamentos de programación",
       round: {
-        round: "RONDA #1",
+        round: "NIVEL 1",
         points: 10000,
       },
     },
@@ -121,7 +121,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Fundamentos de programación",
       round: {
-        round: "RONDA #1",
+        round: "NIVEL 1",
         points: 10000,
       },
     },
@@ -150,7 +150,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Git",
       round: {
-        round: "RONDA #2",
+        round: "NIVEL 2",
         points: 15000,
       },
     },
@@ -179,7 +179,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Git",
       round: {
-        round: "RONDA #2",
+        round: "NIVEL 2",
         points: 15000,
       },
     },
@@ -208,7 +208,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Git",
       round: {
-        round: "RONDA #2",
+        round: "NIVEL 2",
         points: 15000,
       },
     },
@@ -237,7 +237,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Git",
       round: {
-        round: "RONDA #2",
+        round: "NIVEL 2",
         points: 15000,
       },
     },
@@ -265,7 +265,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Git",
       round: {
-        round: "RONDA #2",
+        round: "NIVEL 2",
         points: 15000,
       },
     },
@@ -294,7 +294,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Desarrollo Front End",
       round: {
-        round: "RONDA #3",
+        round: "NIVEL 3",
         points: 20000,
       },
     },
@@ -322,7 +322,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Desarrollo Front End",
       round: {
-        round: "RONDA #3",
+        round: "NIVEL 3",
         points: 20000,
       },
     },
@@ -351,7 +351,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Desarrollo Front End",
       round: {
-        round: "RONDA #3",
+        round: "NIVEL 3",
         points: 20000,
       },
     },
@@ -380,7 +380,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Desarrollo Front End",
       round: {
-        round: "RONDA #3",
+        round: "NIVEL 3",
         points: 20000,
       },
     },
@@ -409,7 +409,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Desarrollo Front End",
       round: {
-        round: "RONDA #3",
+        round: "NIVEL 3",
         points: 20000,
       },
     },
@@ -437,7 +437,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Programacion orientada a objetos",
       round: {
-        round: "RONDA #4",
+        round: "NIVEL 4",
         points: 25000,
       },
     },
@@ -465,7 +465,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Programacion orientada a objetos",
       round: {
-        round: "RONDA #4",
+        round: "NIVEL 4",
         points: 25000,
       },
     },
@@ -493,7 +493,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Programacion orientada a objetos",
       round: {
-        round: "RONDA #4",
+        round: "NIVEL 4",
         points: 25000,
       },
     },
@@ -521,7 +521,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Programacion orientada a objetos",
       round: {
-        round: "RONDA #4",
+        round: "NIVEL 4",
         points: 25000,
       },
     },
@@ -549,7 +549,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Programacion orientada a objetos",
       round: {
-        round: "RONDA #4",
+        round: "NIVEL 4",
         points: 25000,
       },
     },
@@ -575,9 +575,9 @@ export const questionInitialData: Array<Question> = [
   {
     question: "Tipos de JOIN en sql",
     category: {
-      category: "Programacion orientada a objetos",
+      category: "Bases de datos",
       round: {
-        round: "RONDA #5",
+        round: "NIVEL 5",
         points: 30000,
       },
     },
@@ -603,9 +603,9 @@ export const questionInitialData: Array<Question> = [
   {
     question: "Oracle, Access, PostgreSQL, MySQL, Apache Derby, Firebird son ejemplos de:",
     category: {
-      category: "Programacion orientada a objetos",
+      category: "Bases de datos",
       round: {
-        round: "RONDA #5",
+        round: "NIVEL 5",
         points: 30000,
       },
     },
@@ -631,9 +631,9 @@ export const questionInitialData: Array<Question> = [
   {
     question: "Es el elemento u objeto de una base de datos que sirve para definir pantallas o ventanas, se usan para introducir, visualizar y modificar registros de las tablas o consultas",
     category: {
-      category: "Programacion orientada a objetos",
+      category: "Bases de datos",
       round: {
-        round: "RONDA #5",
+        round: "NIVEL 5",
         points: 30000,
       },
     },
@@ -661,7 +661,7 @@ export const questionInitialData: Array<Question> = [
     category: {
       category: "Bases de datos",
       round: {
-        round: "RONDA #5",
+        round: "NIVEL 5",
         points: 30000,
       },
     },
@@ -680,6 +680,34 @@ export const questionInitialData: Array<Question> = [
       },
       {
         item: "	Informes",
+        isCorrect: false,
+      },
+    ],
+  },
+  {
+    question: "¿Qué significa SQL?:",
+    category: {
+      category: "Bases de datos",
+      round: {
+        round: "NIVEL 5",
+        points: 30000,
+      },
+    },
+    options: [
+      {
+        item: "Strong Question Language",
+        isCorrect: false,
+      },
+      {
+        item: "Structured Query Language",
+        isCorrect: true,
+      },
+      {
+        item: "Structured Question Language",
+        isCorrect: false,
+      },
+      {
+        item: "	Ninguna de las anteriores",
         isCorrect: false,
       },
     ],
