@@ -1,20 +1,22 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 export const getQuestion = async (rondaId) => {
-  console.log("se ejecuto getQuestion");
   if (!rondaId) {
     return { opciones: [], pregunta: "", categoria: "" };
   }
   try {
     const { data: responseCategory } = await axios.get(`/category/${rondaId}`);
     const idCategory = responseCategory.category._id;
-    debugger
+
     const { data: responseQuestons } = await axios.get(
       `/question/${idCategory}`
     );
+    const random = Math.floor(
+      Math.random() * (responseQuestons.question.length - 1 - 0 + 1) + 0
+    );
     return {
-      opciones: responseQuestons.question.options,
-      pregunta: responseQuestons.question.question,
+      opciones: responseQuestons.question[random].options,
+      pregunta: responseQuestons.question[random].question,
       categoria: responseCategory.category.category,
     };
   } catch (error) {

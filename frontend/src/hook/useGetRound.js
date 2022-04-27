@@ -10,7 +10,7 @@ export const useGetRound = () => {
 
   const getRound = async (roundId) => {
     const { opciones, pregunta, categoria } = await getQuestion(roundId);
-    debugger
+    
     setstate({
       opciones,
       pregunta,
