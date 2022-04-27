@@ -21,7 +21,7 @@ export const Nav = React.memo(({ puntos = 0 }) => {
         </div>
         <div className="d-flex flex-wrap">
           <span className="nav-item nav-link text-success">
-            Total Puntos: {puntos}
+            Total Puntos: {String(puntos).replace(/\B(?=(\d{3})+\b)/g, ",")}
           </span>
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             Salir
