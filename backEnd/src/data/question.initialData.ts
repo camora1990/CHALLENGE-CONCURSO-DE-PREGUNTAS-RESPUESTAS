@@ -592,11 +592,11 @@ export const questionInitialData: Array<Question> = [
       },
       {
         item: "INNER, FULL, LEFT, RIGHT",
-        isCorrect: false,
+        isCorrect: true,
       },
       {
         item: "INNER, FULL",
-        isCorrect: true,
+        isCorrect: false,
       },
     ],
   },
