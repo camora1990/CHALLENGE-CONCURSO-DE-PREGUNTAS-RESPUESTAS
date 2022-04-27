@@ -11,7 +11,6 @@ export class PlayerController {
 
     try {
       await player.save();
-      console.log(player);
       return res.status(201).json({
         ok: true,
         message: "Player created successfully",
