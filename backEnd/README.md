@@ -1,7 +1,3 @@
-# **`CHALLENGE-CONCURSO-DE-PREGUNTAS-RESPUESTAS`**
-
-concurso de preguntas y respuestas
-
 # **`Pre requistos`**
 
 ## **`Instalaciones necesarias`**
@@ -74,18 +70,3 @@ No usar el puerto 3000 pues es el que se usa react por defecto
 
 - Registra el jugador que gana el juego con su puntaje
   > http://localhost:PORT/api/v1/score
-
-
-# **`Configuración del frontEnd`**
-
-1. Ingresar a la carperta frontEnd abrir la consola y ejecutar el siguiente comando para instalar todas las dependencias del proyecto
-
-> npm install
-
-2. Luego de instalar las dependencias en la misma carpeta se ejecuta el comando 
-
-### `Nota`:
-
-Antes de ejecutar el siguiente comando, verificar que el servidor del backend se este ejecutando.
-
-> npm run start
